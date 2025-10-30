@@ -1,0 +1,67 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tensor Tonic",
+    "section": "",
+    "text": "Tensor Tonic\nThis is a notebook for my solutions to the Tensor Tonic problems.",
+    "crumbs": [
+      "Tensor Tonic"
+    ]
+  },
+  {
+    "objectID": "activation-functions/implement-sigmoid-in-numpy.html",
+    "href": "activation-functions/implement-sigmoid-in-numpy.html",
+    "title": "Implement Sigmoid In Numpy",
+    "section": "",
+    "text": "Background\nQuestion: Easy - 3. Implement Sigmoid In Numpy\nThe sigmoid function is one of the simplest and most widely used activation functions in machine learning. It takes any real number and maps it smoothly into the range (0, 1).\n\\[ \\sigma(x) = \\frac{1}{1 + e^{-x}} \\]\nThis is important because many machine learning tasks deal with probabilities or binary outcomes.\nBy mapping raw model outputs (which can be any number) into this range, sigmoid gives results that are:\nAlso, sigmoid is a smooth, continuous curve that doesn’t jump suddenly between 0 and 1 like a step function. This matters because in machine learning, especially in neural networks, because gradients are used to adjust weights. Sigmoid is differentiable\nThe derivative of the sigmoid function (how fast it changes) allows gradient-based learning like backpropagation to work properly.\nSigmoids introduce non-linearity, which lets models capture complex patterns instead of just drawing straight lines.\nWhat is it activating?\nIt takes the neuron’s input (a raw weighted sum) and activates it by converting it into a value between 0 and 1\nThis “activation” is like saying:",
+    "crumbs": [
+      "Activation Functions",
+      "Implement Sigmoid In Numpy"
+    ]
+  },
+  {
+    "objectID": "activation-functions/implement-sigmoid-in-numpy.html#intuition",
+    "href": "activation-functions/implement-sigmoid-in-numpy.html#intuition",
+    "title": "Implement Sigmoid In Numpy",
+    "section": "",
+    "text": "If \\(x\\) is very large, then \\(e^{-x}\\) becomes tiny, so the output is approximately \\(1\\).\n\nIf \\(x\\) is very negative, then \\(e^{-x}\\) becomes huge, so the output is approximately \\(0\\).\n\nIf \\(x = 0\\), then \\(e^{-0} = 1\\), so the output equals \\(0.5\\).\n\n\n\nimport np as numpy\ndef sigmoid(x):\n    return (1 / (1 + np.exp(-x)))",
+    "crumbs": [
+      "Activation Functions",
+      "Implement Sigmoid In Numpy"
+    ]
+  },
+  {
+    "objectID": "activation-functions/implement-sigmoid-in-numpy.html#approach",
+    "href": "activation-functions/implement-sigmoid-in-numpy.html#approach",
+    "title": "Implement Sigmoid In Numpy",
+    "section": "Approach",
+    "text": "Approach\nGiven the function formula:\n\\[ \\sigma(x) = \\frac{1}{1 + e^{-x}} \\]\nWe can simply write a python function for sigmoid as:\nimport np as numpy\ndef sigmoid(x):\n    return (1 / (1 + np.exp(-x)))\nNote that the question requires us to return a NumPy array of floats. However, our input can be scalars, Python lists, and NumPy arrays. We solve this by wrapping input with np.asarray\nimport numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Vectorized sigmoid function.\n    \"\"\"\n    x = np.asarray(x, dtype=float)\n    return (1 / (1 + np.exp(-x)))",
+    "crumbs": [
+      "Activation Functions",
+      "Implement Sigmoid In Numpy"
+    ]
+  },
+  {
+    "objectID": "activation-functions/implement-sigmoid-in-numpy.html#solution",
+    "href": "activation-functions/implement-sigmoid-in-numpy.html#solution",
+    "title": "Implement Sigmoid In Numpy",
+    "section": "Solution",
+    "text": "Solution\nimport numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Vectorized sigmoid function.\n    \"\"\"\n    x = np.asarray(x, dtype=float)\n    return (1 / (1 + np.exp(-x)))",
+    "crumbs": [
+      "Activation Functions",
+      "Implement Sigmoid In Numpy"
+    ]
+  },
+  {
+    "objectID": "activation-functions/implement-sigmoid-in-numpy.html#background",
+    "href": "activation-functions/implement-sigmoid-in-numpy.html#background",
+    "title": "Implement Sigmoid In Numpy",
+    "section": "",
+    "text": "If \\(x\\) is very large, then \\(e^{-x}\\) becomes tiny, so the output is approximately \\(1\\).\n\nIf \\(x\\) is very negative, then \\(e^{-x}\\) becomes huge, so the output is approximately \\(0\\).\n\nIf \\(x = 0\\), then \\(e^{-0} = 1\\), so the output equals \\(0.5\\).\n\n\n\n\n\n\n\n\n\nTipQuestions\n\n\n\n\nWhy use a function like sigmiod?\nWhat is the funciton activating?\n\n\n\n\n\n\nEasy to interpret\nNumerically stable\nProbabilistically meaningful\n\n\n\n\n\n\n\n\nIf the neuron’s input is strongly positive, the neuron fires (close to \\(1\\)).\n\nIf it’s strongly negative, the neuron stays quiet (close to \\(0\\)).\n\nIf it’s uncertain, the neuron is partially active (around \\(0.5\\)).",
+    "crumbs": [
+      "Activation Functions",
+      "Implement Sigmoid In Numpy"
+    ]
+  }
+]
