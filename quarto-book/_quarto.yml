@@ -10,6 +10,9 @@ book:
   - part: Activation Functions
     chapters:
       - activation-functions/implement-sigmoid-in-numpy.md
+  - part: Linear Algebra
+    chapters:
+      - linear-algebra/implement-dot-product.md
     
 
 format:
